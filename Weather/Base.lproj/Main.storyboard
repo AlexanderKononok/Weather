@@ -63,6 +63,96 @@
             </objects>
             <point key="canvasLocation" x="33.644859813084111" y="76.45788336933046"/>
         </scene>
+        <!--Today Weather View Controller-->
+        <scene sceneID="JUS-ac-kVs">
+            <objects>
+                <viewController storyboardIdentifier="TodayWeatherViewController" id="t0a-D2-b3T" customClass="TodayWeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PfT-bh-d2I">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4E-Rn-tQD">
+                                <rect key="frame" x="0.0" y="831" width="428" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAp-Ct-LcB">
+                                        <rect key="frame" x="20.000000000000007" y="10" width="122.66666666666669" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qAp-Ct-LcB" secondAttribute="height" multiplier="3:1" id="Oas-hA-TXh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Today">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fg-Ee-Xx2">
+                                        <rect key="frame" x="285.33333333333331" y="10" width="122.66666666666669" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3fg-Ee-Xx2" secondAttribute="height" multiplier="3:1" id="BNu-EF-l4K"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="5-days">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xM3-6q-Wmx">
+                                        <rect key="frame" x="152.66666666666666" y="10" width="122.66666666666666" height="41"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xM3-6q-Wmx" secondAttribute="height" multiplier="3:1" id="y0R-dQ-X6i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="3-days">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xM3-6q-Wmx" secondAttribute="bottom" constant="10" id="1ow-8S-66q"/>
+                                    <constraint firstItem="3fg-Ee-Xx2" firstAttribute="top" secondItem="C4E-Rn-tQD" secondAttribute="top" constant="10" id="C0x-Gr-RhW"/>
+                                    <constraint firstAttribute="trailing" secondItem="3fg-Ee-Xx2" secondAttribute="trailing" constant="20" id="NqY-ec-Suj"/>
+                                    <constraint firstItem="qAp-Ct-LcB" firstAttribute="top" secondItem="C4E-Rn-tQD" secondAttribute="top" constant="10" id="PSq-bP-VHY"/>
+                                    <constraint firstAttribute="bottom" secondItem="3fg-Ee-Xx2" secondAttribute="bottom" constant="10" id="bhi-Ce-BsY"/>
+                                    <constraint firstItem="xM3-6q-Wmx" firstAttribute="leading" secondItem="qAp-Ct-LcB" secondAttribute="trailing" constant="10" id="et7-P4-6Cv"/>
+                                    <constraint firstItem="3fg-Ee-Xx2" firstAttribute="leading" secondItem="xM3-6q-Wmx" secondAttribute="trailing" constant="10" id="mRG-KE-YB3"/>
+                                    <constraint firstItem="qAp-Ct-LcB" firstAttribute="leading" secondItem="C4E-Rn-tQD" secondAttribute="leading" constant="20" id="nEJ-8w-2WB"/>
+                                    <constraint firstAttribute="bottom" secondItem="qAp-Ct-LcB" secondAttribute="bottom" constant="10" id="wsO-KM-ebB"/>
+                                    <constraint firstItem="xM3-6q-Wmx" firstAttribute="top" secondItem="C4E-Rn-tQD" secondAttribute="top" constant="10" id="yM5-WI-Hdg"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ChosenCity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMf-jx-OLp">
+                                <rect key="frame" x="20" y="194" width="388" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Prr-hh-HHp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Prr-hh-HHp" firstAttribute="bottom" secondItem="C4E-Rn-tQD" secondAttribute="bottom" id="0il-Zl-1fW"/>
+                            <constraint firstItem="C4E-Rn-tQD" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" id="94K-TD-Jee"/>
+                            <constraint firstItem="C4E-Rn-tQD" firstAttribute="trailing" secondItem="Prr-hh-HHp" secondAttribute="trailing" id="GoB-9s-pui"/>
+                            <constraint firstItem="RMf-jx-OLp" firstAttribute="centerX" secondItem="Prr-hh-HHp" secondAttribute="centerX" id="Iqd-hW-c1r"/>
+                            <constraint firstItem="RMf-jx-OLp" firstAttribute="top" secondItem="Prr-hh-HHp" secondAttribute="top" constant="150" id="oCU-PG-nub"/>
+                            <constraint firstItem="Prr-hh-HHp" firstAttribute="trailing" secondItem="RMf-jx-OLp" secondAttribute="trailing" constant="20" id="pOq-dh-FwV"/>
+                            <constraint firstItem="RMf-jx-OLp" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" constant="20" id="wne-3t-etq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="C4E-Rn-tQD" id="rN9-yq-MZJ"/>
+                        <outlet property="chosenCityLabel" destination="RMf-jx-OLp" id="gOU-Io-pgM"/>
+                        <outlet property="fiveDaysButton" destination="3fg-Ee-Xx2" id="2rR-oQ-b6M"/>
+                        <outlet property="threeDaysButton" destination="xM3-6q-Wmx" id="KZR-DN-2Ra"/>
+                        <outlet property="todayButton" destination="qAp-Ct-LcB" id="Ns2-kZ-OqG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dMf-qT-GZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877.57009345794393" y="75.809935205183592"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="feZ-zz-unF">
             <objects>

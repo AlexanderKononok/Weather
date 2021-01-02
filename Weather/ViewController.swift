@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         let todayWeatherViewController = todayWeatherStoryboard.instantiateViewController(
             identifier: String(describing: TodayWeatherViewController.self))
             as? TodayWeatherViewController
+
+        let index = cityPicker.selectedRow(inComponent: 0)
+        todayWeatherViewController?.chosenCity = citiesArray[index]
+
+        navigationController?.pushViewController(todayWeatherViewController ?? UIViewController(), animated: true)
     }
 
 }
