@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cityPicker: UIPickerView!
 
-    let citiesArray: [String] = ["Minsk", "Gomel"]
+//    let citiesArray: [String] = ["Minsk", "Gomel"]
+    var citiesArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,24 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
 
         okButton.layer.cornerRadius = okButton.frame.height / 2
+
+        if let urlCityList = Bundle.main.path(forResource: "city.list", ofType: ".json") {
+            let url = URL(fileURLWithPath: urlCityList)
+            do {
+                let data = try Data(contentsOf: url)
+
+                if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) {
+                    let cityListDict = jsonData as? [[String: Any]]
+                    
+                    for nameCity in cityListDict! {
+                        // swiftlint:disable force_cast
+                        citiesArray.append(nameCity["name"] as! String)
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 
     @IBAction func okButtonPressed(_ sender: Any) {

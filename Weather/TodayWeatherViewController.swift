@@ -19,30 +19,17 @@ class TodayWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        sendRequest()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if let urlCityList = Bundle.main.path(forResource: "city.list", ofType: ".json") {
-            let url = URL(fileURLWithPath: urlCityList)
-            do {
-                let data = try Data(contentsOf: url)
-//                let cityName = try? JSONDecoder().decode(CityList.self, from: data)
-//                print(cityName?.name)
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-                    let cityListDict = json as? [String: Any]
-                    let cityName = cityListDict?["name"] as? [String]
-                    print("TEST")
-                    print(cityName)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-
         chosenCityLabel.text = chosenCity
         roundButton(nameButton: [todayButton, threeDaysButton, fiveDaysButton])
+    }
+
+    func sendRequest() {
     }
 
 }
