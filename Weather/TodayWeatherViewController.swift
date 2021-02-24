@@ -41,20 +41,21 @@ class TodayWeatherViewController: UIViewController {
                     print(error?.localizedDescription)
                     return
                 }
-
-                if let data = data {
-                    if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) {
-                        let jsonDataDictionary = jsonData as? [String: Any]
-                        let weatherCondition = jsonDataDictionary?["weather"] as? [[String: Any]]
-                        let cityCondition = weatherCondition?[0].filter { $0.0 == "main" }
-                        // swiftlint:disable force_cast
-                        self.conditionTodayLabel.text = cityCondition?["main"] as! String
-                        let weatherMainIndicators = jsonDataDictionary?["main"] as? [String: Any]
-//                        print(weatherMainIndicators)
-                        let cityTemperature = weatherMainIndicators?.filter { $0.0 == "temp" }
-                        // swiftlint:disable force_cast
-                        var cityTemperatureInCelsius = self.conversionKelvinToCelsius(temperature: cityTemperature?["temp"] as! Double)
-                        self.temperatureTodayLabel.text = String(cityTemperatureInCelsius)
+                
+                DispatchQueue.main.async {
+                    if let data = data {
+                        if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) {
+                            let jsonDataDictionary = jsonData as? [String: Any]
+                            let weatherCondition = jsonDataDictionary?["weather"] as? [[String: Any]]
+                            let cityCondition = weatherCondition?[0].filter { $0.0 == "main" }
+                            // swiftlint:disable force_cast
+                            self.conditionTodayLabel.text = cityCondition?["main"] as! String
+                            let weatherMainIndicators = jsonDataDictionary?["main"] as? [String: Any]
+                            let cityTemperature = weatherMainIndicators?.filter { $0.0 == "temp" }
+                            // swiftlint:disable force_cast
+                            var cityTemperatureInCelsius = self.conversionKelvinToCelsius(temperature: cityTemperature?["temp"] as! Double)
+                            self.temperatureTodayLabel.text = String(cityTemperatureInCelsius)
+                        }
                     }
                 }
             }
@@ -62,8 +63,8 @@ class TodayWeatherViewController: UIViewController {
         }
     }
 
-    func conversionKelvinToCelsius(temperature: Double) -> Int {
-        return Int(temperature - 273.15)
+    func conversionKelvinToCelsius(temperature: Double) -> Double {
+        return Double(round((temperature - 273.15) * 10) / 10)
     }
 }
 
