@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var cityPicker: UIPickerView!
 
-//    let citiesArray: [String] = ["Minsk", "Gomel"]
-    var citiesArray: [String] = []
+    var citiesArray: [String] = ["Minsk", "Gomel"]
+//    var citiesArray: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
 
                 if let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) {
                     let cityListDict = jsonData as? [[String: Any]]
-                    
+
                     for nameCity in cityListDict! {
                         // swiftlint:disable force_cast
                         citiesArray.append(nameCity["name"] as! String)
@@ -55,11 +55,11 @@ class ViewController: UIViewController {
             as? TodayWeatherViewController
 
         let index = cityPicker.selectedRow(inComponent: 0)
+
         todayWeatherViewController?.chosenCity = citiesArray[index]
 
         navigationController?.pushViewController(todayWeatherViewController ?? UIViewController(), animated: true)
     }
-
 }
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {

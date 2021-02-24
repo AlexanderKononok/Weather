@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5cJ-Ej-KNa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5cJ-Ej-KNa">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -128,17 +128,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu6-hA-YO6">
-                                <rect key="frame" x="168.66666666666666" y="373" width="90.999999999999972" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="juP-ca-V8f"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu6-hA-YO6">
+                                <rect key="frame" x="20" y="463" width="388" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="150"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Foggy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8b-Cj-2Hv">
-                                <rect key="frame" x="167" y="563" width="94" height="42"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8b-Cj-2Hv">
+                                <rect key="frame" x="20" y="473" width="388" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,19 +148,25 @@
                             <constraint firstItem="Zu6-hA-YO6" firstAttribute="centerY" secondItem="PfT-bh-d2I" secondAttribute="centerY" id="5GT-59-46b"/>
                             <constraint firstItem="C4E-Rn-tQD" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" id="94K-TD-Jee"/>
                             <constraint firstItem="y8b-Cj-2Hv" firstAttribute="top" secondItem="Zu6-hA-YO6" secondAttribute="bottom" constant="10" id="9hf-Sg-ELK"/>
+                            <constraint firstItem="Prr-hh-HHp" firstAttribute="trailing" secondItem="Zu6-hA-YO6" secondAttribute="trailing" constant="20" id="EaC-AK-oik"/>
                             <constraint firstItem="y8b-Cj-2Hv" firstAttribute="centerX" secondItem="PfT-bh-d2I" secondAttribute="centerX" id="FjN-3F-SdX"/>
                             <constraint firstItem="C4E-Rn-tQD" firstAttribute="trailing" secondItem="Prr-hh-HHp" secondAttribute="trailing" id="GoB-9s-pui"/>
+                            <constraint firstItem="Zu6-hA-YO6" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" constant="20" id="H9C-ed-XwG"/>
                             <constraint firstItem="RMf-jx-OLp" firstAttribute="centerX" secondItem="Prr-hh-HHp" secondAttribute="centerX" id="Iqd-hW-c1r"/>
+                            <constraint firstItem="Prr-hh-HHp" firstAttribute="trailing" secondItem="y8b-Cj-2Hv" secondAttribute="trailing" constant="20" id="nvL-lO-N4t"/>
                             <constraint firstItem="RMf-jx-OLp" firstAttribute="top" secondItem="Prr-hh-HHp" secondAttribute="top" constant="150" id="oCU-PG-nub"/>
                             <constraint firstItem="Prr-hh-HHp" firstAttribute="trailing" secondItem="RMf-jx-OLp" secondAttribute="trailing" constant="20" id="pOq-dh-FwV"/>
                             <constraint firstItem="Zu6-hA-YO6" firstAttribute="centerX" secondItem="PfT-bh-d2I" secondAttribute="centerX" id="rAS-vj-G1j"/>
                             <constraint firstItem="RMf-jx-OLp" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" constant="20" id="wne-3t-etq"/>
+                            <constraint firstItem="y8b-Cj-2Hv" firstAttribute="leading" secondItem="Prr-hh-HHp" secondAttribute="leading" constant="20" id="xS8-dL-oc7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="C4E-Rn-tQD" id="rN9-yq-MZJ"/>
                         <outlet property="chosenCityLabel" destination="RMf-jx-OLp" id="gOU-Io-pgM"/>
+                        <outlet property="conditionTodayLabel" destination="y8b-Cj-2Hv" id="K58-SV-nQD"/>
                         <outlet property="fiveDaysButton" destination="3fg-Ee-Xx2" id="2rR-oQ-b6M"/>
+                        <outlet property="temperatureTodayLabel" destination="Zu6-hA-YO6" id="cH3-C2-u0Y"/>
                         <outlet property="threeDaysButton" destination="xM3-6q-Wmx" id="KZR-DN-2Ra"/>
                         <outlet property="todayButton" destination="qAp-Ct-LcB" id="Ns2-kZ-OqG"/>
                     </connections>
